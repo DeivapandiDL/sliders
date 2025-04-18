@@ -1,0 +1,64 @@
+.sliderContainer{width:100%;overflow:hidden;position: relative;
+    button{background: transparent;border:0;outline: none;}
+    ul{list-style: none;padding:0;margin:0;display:flex;
+        li{
+           position:relative;width:100%;transition:all 0.2s linear;
+           .captionBanner{position: absolute;width:100%;height:100%;display: flex;align-items: center;justify-content: center;z-index: 1;
+            top: 0;flex-direction: column;}
+        img{width:100%;object-fit: cover;height:300px;}
+        
+    }
+
+    
+        // fade in     
+        li.fadeOutAnim{opacity:0;display:none;
+            // animation: fadeOutFrame 0.2s;
+            transition: all 0.3s linear;
+        }
+        @keyframes fadeOutFrame {
+            0% {display:block;opacity:1}
+            100% {display: none;opacity:0}
+          }
+
+        li.fadeInAnim{opacity:1;display:block;
+            transition:all 0.3s linear;
+            // animation: fadeInFrame 0.2s;
+        }
+        @keyframes fadeInFrame {
+            0% {display:none;opacity:0}
+            100% {display: block;opacity:1}
+          }
+
+        // carousel
+        li.carouselPrev{
+            transform: translateX(-100%);
+            transition: all 0.2s linear;
+        }
+        li.carouselNext{
+            transform: translateX(100%);
+            transition: all 0.2s linear;
+        }
+        li.carouselAvail{
+            transform: translateX(0%);
+            transition: all 0.2s linear;
+        }
+        li.dNone{
+            // display:none;
+        }
+
+
+    }
+
+
+
+        
+        #nextBtn{position: absolute;cursor: pointer;
+            top: calc(50% - 25px);
+            height: 50px;z-index: 1;right:0px;
+            width: 50px;background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");}
+        #prevBtn{position: absolute;cursor: pointer;
+            top: calc(50% - 25px);
+            height: 50px;
+            width: 50px;left:0;z-index: 1;
+            transform: rotate(180deg);background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");}
+}
